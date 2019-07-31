@@ -1,0 +1,379 @@
+[
+  {
+    "searchBoxRenderer": {
+      "endpoint": {
+        "clickTrackingParams": "CIQFEPTUARgBIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ",
+        "commandMetadata": {
+          "webCommandMetadata": {
+            "url": "/feed/history",
+            "webPageType": "WEB_PAGE_TYPE_BROWSE"
+          }
+        },
+        "browseEndpoint": { "browseId": "FEhistory" }
+      },
+      "searchButton": {
+        "buttonRenderer": {
+          "icon": { "iconType": "SEARCH" },
+          "trackingParams": "CIYFEPBbIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ",
+          "accessibilityData": {
+            "accessibilityData": { "label": "Search watch history" }
+          }
+        }
+      },
+      "clearButton": {
+        "buttonRenderer": {
+          "icon": { "iconType": "CLOSE" },
+          "navigationEndpoint": {
+            "clickTrackingParams": "CIUFEPBbIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ",
+            "commandMetadata": {
+              "webCommandMetadata": {
+                "url": "/feed/history",
+                "webPageType": "WEB_PAGE_TYPE_BROWSE"
+              }
+            },
+            "browseEndpoint": { "browseId": "FEhistory" }
+          },
+          "trackingParams": "CIUFEPBbIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ",
+          "accessibilityData": {
+            "accessibilityData": { "label": "Clear search query" }
+          }
+        }
+      },
+      "placeholderText": { "simpleText": "Search watch history" },
+      "trackingParams": "CIQFEPTUARgBIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ"
+    }
+  },
+  {
+    "subFeedSelectorRenderer": {
+      "title": { "runs": [{ "text": "History type" }] },
+      "options": [
+        {
+          "subFeedOptionRenderer": {
+            "name": { "runs": [{ "text": "Watch history" }] },
+            "isSelected": true,
+            "navigationEndpoint": {
+              "clickTrackingParams": "CIMFEJGcARgAIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ",
+              "commandMetadata": {
+                "webCommandMetadata": {
+                  "url": "/feed/history",
+                  "webPageType": "WEB_PAGE_TYPE_BROWSE"
+                }
+              },
+              "browseEndpoint": { "browseId": "FEhistory" }
+            },
+            "trackingParams": "CIMFEJGcARgAIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ"
+          }
+        },
+        {
+          "subFeedOptionRenderer": {
+            "name": { "runs": [{ "text": "Search history" }] },
+            "navigationEndpoint": {
+              "clickTrackingParams": "CIIFEJGcARgBIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ",
+              "commandMetadata": {
+                "webCommandMetadata": {
+                  "url": "/feed/history/search_history",
+                  "webPageType": "WEB_PAGE_TYPE_BROWSE"
+                }
+              },
+              "browseEndpoint": {
+                "browseId": "FEhistory",
+                "params": "Eg5zZWFyY2hfaGlzdG9yeQ%3D%3D"
+              }
+            },
+            "trackingParams": "CIIFEJGcARgBIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ"
+          }
+        },
+        {
+          "subFeedOptionRenderer": {
+            "name": { "runs": [{ "text": "Comments" }] },
+            "navigationEndpoint": {
+              "clickTrackingParams": "CIEFEJGcARgCIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ",
+              "commandMetadata": {
+                "webCommandMetadata": {
+                  "url": "/feed/history/comment_history",
+                  "webPageType": "WEB_PAGE_TYPE_BROWSE"
+                }
+              },
+              "browseEndpoint": {
+                "browseId": "FEhistory",
+                "params": "Eg9jb21tZW50X2hpc3Rvcnk%3D"
+              }
+            },
+            "trackingParams": "CIEFEJGcARgCIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ"
+          }
+        },
+        {
+          "subFeedOptionRenderer": {
+            "name": { "runs": [{ "text": "Community" }] },
+            "navigationEndpoint": {
+              "clickTrackingParams": "CIAFEJGcARgDIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ",
+              "commandMetadata": {
+                "webCommandMetadata": {
+                  "url": "/feed/history/community_history",
+                  "webPageType": "WEB_PAGE_TYPE_BROWSE"
+                }
+              },
+              "browseEndpoint": {
+                "browseId": "FEhistory",
+                "params": "EhFjb21tdW5pdHlfaGlzdG9yeQ%3D%3D"
+              }
+            },
+            "trackingParams": "CIAFEJGcARgDIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ"
+          }
+        },
+        {
+          "subFeedOptionRenderer": {
+            "name": { "runs": [{ "text": "Live chat" }] },
+            "navigationEndpoint": {
+              "clickTrackingParams": "CP8EEJGcARgEIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ",
+              "commandMetadata": {
+                "webCommandMetadata": {
+                  "url": "/feed/history/live_chat_history",
+                  "webPageType": "WEB_PAGE_TYPE_BROWSE"
+                }
+              },
+              "browseEndpoint": {
+                "browseId": "FEhistory",
+                "params": "EhFsaXZlX2NoYXRfaGlzdG9yeQ%3D%3D"
+              }
+            },
+            "trackingParams": "CP8EEJGcARgEIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ"
+          }
+        }
+      ],
+      "trackingParams": "CP4EEJCcARgCIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ"
+    }
+  },
+  {
+    "buttonRenderer": {
+      "text": { "runs": [{ "text": "Clear all watch history" }] },
+      "navigationEndpoint": {
+        "clickTrackingParams": "CPgEEPBbGAMiEwi7gqPns97jAhUWqYIKHQ8ICpA=",
+        "commandMetadata": {
+          "webCommandMetadata": { "ignoreNavigation": true }
+        },
+        "confirmDialogEndpoint": {
+          "content": {
+            "confirmDialogRenderer": {
+              "title": { "runs": [{ "text": "Clear watch history?" }] },
+              "confirmEndpoint": {
+                "clickTrackingParams": "CPkEEMY4IhMIu4Kj57Pe4wIVFqmCCh0PCAqQ",
+                "commandMetadata": {
+                  "webCommandMetadata": {
+                    "url": "/service_ajax",
+                    "sendPost": true
+                  }
+                },
+                "feedbackEndpoint": {
+                  "feedbackToken": "AB9zfpIwo8QPGifbwh5kvSD5ukBJzWF_r0jndELMx0WjKv2RhUs29MkutxmWnTjuSqOlcxd-lv8EoqiVEt91CBbn_kvtPjcT8gD8pJr8uX4LpxWg0GnoiM8",
+                  "uiActions": { "hideEnclosingContainer": false },
+                  "actions": [
+                    {
+                      "openPopupAction": {
+                        "popup": {
+                          "notificationActionRenderer": {
+                            "responseText": {
+                              "runs": [{ "text": "Watch history cleared" }]
+                            },
+                            "trackingParams": "CP0EELlqIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ"
+                          }
+                        },
+                        "popupType": "TOAST"
+                      }
+                    }
+                  ]
+                }
+              },
+              "trackingParams": "CPkEEMY4IhMIu4Kj57Pe4wIVFqmCCh0PCAqQ",
+              "dialogMessages": [
+                {
+                  "runs": [
+                    {
+                      "text": "Harry Yu (HY.harry.yu@gmail.com)",
+                      "bold": true
+                    },
+                    {
+                      "text": "\n\nYour YouTube watch history will be cleared from all YouTube apps on all devices.\n\nYour video recommendations will be reset, but may still be influenced by activity on other Google products. To learn more, visit "
+                    },
+                    {
+                      "text": "My Activity",
+                      "navigationEndpoint": {
+                        "clickTrackingParams": "CPkEEMY4IhMIu4Kj57Pe4wIVFqmCCh0PCAqQ",
+                        "commandMetadata": {
+                          "webCommandMetadata": {
+                            "url": "https://myaccount.google.com/activitycontrols?hl=en"
+                          }
+                        },
+                        "urlEndpoint": {
+                          "url": "https://myaccount.google.com/activitycontrols?hl=en",
+                          "target": "TARGET_NEW_WINDOW"
+                        }
+                      }
+                    },
+                    { "text": "." }
+                  ]
+                }
+              ],
+              "confirmButton": {
+                "buttonRenderer": {
+                  "style": "STYLE_BLUE_TEXT",
+                  "size": "SIZE_DEFAULT",
+                  "text": { "simpleText": "CLEAR WATCH HISTORY" },
+                  "serviceEndpoint": {
+                    "clickTrackingParams": "CPsEEPBbIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ",
+                    "commandMetadata": {
+                      "webCommandMetadata": {
+                        "url": "/service_ajax",
+                        "sendPost": true
+                      }
+                    },
+                    "feedbackEndpoint": {
+                      "feedbackToken": "AB9zfpL77dbNDjdOjbaIfVDvJtDx_x_eaM7PdLbtfGLyIWjYIm-ltUEEl49d_H5-4-Z2HwDqMnM2_LPaVX6uMzFlpNl0I1cS-O2WQ4H8q0i-yvIPFMfkoJ4",
+                      "uiActions": { "hideEnclosingContainer": false },
+                      "actions": [
+                        {
+                          "openPopupAction": {
+                            "popup": {
+                              "notificationActionRenderer": {
+                                "responseText": {
+                                  "runs": [{ "text": "Watch history cleared" }]
+                                },
+                                "trackingParams": "CPwEELlqIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ"
+                              }
+                            },
+                            "popupType": "TOAST"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "trackingParams": "CPsEEPBbIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ"
+                }
+              },
+              "cancelButton": {
+                "buttonRenderer": {
+                  "style": "STYLE_TEXT",
+                  "size": "SIZE_DEFAULT",
+                  "text": { "runs": [{ "text": "CANCEL" }] },
+                  "trackingParams": "CPoEEPBbIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ"
+                }
+              }
+            }
+          }
+        }
+      },
+      "trackingParams": "CPgEEPBbGAMiEwi7gqPns97jAhUWqYIKHQ8ICpA="
+    }
+  },
+  {
+    "buttonRenderer": {
+      "text": { "runs": [{ "text": "Turn on watch history" }] },
+      "navigationEndpoint": {
+        "clickTrackingParams": "CPQEEPBbGAQiEwi7gqPns97jAhUWqYIKHQ8ICpA=",
+        "commandMetadata": {
+          "webCommandMetadata": { "ignoreNavigation": true }
+        },
+        "confirmDialogEndpoint": {
+          "content": {
+            "confirmDialogRenderer": {
+              "title": { "runs": [{ "text": "Turn on watch history?" }] },
+              "confirmEndpoint": {
+                "clickTrackingParams": "CPUEEMY4IhMIu4Kj57Pe4wIVFqmCCh0PCAqQ",
+                "commandMetadata": {
+                  "webCommandMetadata": {
+                    "url": "/service_ajax",
+                    "sendPost": true
+                  }
+                },
+                "feedbackEndpoint": {
+                  "feedbackToken": "AB9zfpJmvQ6B2EX8Wkd9skj48N1LbSjoryP0IKk_DT1nUqTVlkrZEksgrx0z4pPQNkhRqCsGFMi_M7ZGhhhixaCqh4mUxZxL8UChxe0EtZjrWyplO-7h_gZZgBAX-B9pNq6a8uzdFW7z8932ammEPCYmWp62UBNUa4wdeol1zH504uH0vLN7WtGUEDrkJPYcgYITcAtD9OyubOl_QIRN2ydiUl1EHAvhb4zUEWY8NJMBOuEtv2mISdsmbDBxrLdI3wS6AGM2fyOYsBx5nwVZ1dGclJSBfda5mQ1N4O-JDzYkWtd_QdxP6u26W4FfiBgRUiPx1ufEd2L2RV0a29oYIfSPxa2URMTNDkDHnBxcKZirhZ0MkGXAh6237Op0XwAY-w80QDK260t0SkBRVlWkkqqmmKJDDmbk84iJqsxxX6zTsqc9zMmdxffBPuMFP_VQqNi3RgZTRifaCRu-gCFlkcRELG2iagXvuU3UEOOMlXaVSG1rXq49bQ5IMrxPy24JLqVbW9gwM7-69fUN2dtbVS59H9_ut4hl_RVg28wxmXi11fkmLvd_dnMCsshdqn_Dm9rWkbyxP2rb8vBeVeCmSYRYLGjehwrMg9NFx5ZDmIcMWpWx20gSrOx1dm6_TlhJLv0XeUEfVbfBoRiswOwuEcWz-cSEvBJdeCu5daJCdKabtWGIjmnlOWfi37s5XRziyGAePdVKqtCtReZjxicmWvZq_iOqzpml3dBgBmf4SUuR7IknLGOXj6w",
+                  "uiActions": { "hideEnclosingContainer": false }
+                }
+              },
+              "trackingParams": "CPUEEMY4IhMIu4Kj57Pe4wIVFqmCCh0PCAqQ",
+              "dialogMessages": [
+                {
+                  "runs": [
+                    {
+                      "text": "Harry Yu (HY.harry.yu@gmail.com)",
+                      "bold": true
+                    },
+                    {
+                      "text": "\n\nYour private YouTube watch history makes your recently watched videos on YouTube easy to find and improves recommendations in YouTube and other Google products.\n\nWhen YouTube watch history is on, this data may be saved from any of your signed-in devices. You can always control and review your activity at "
+                    },
+                    {
+                      "text": "My Account",
+                      "navigationEndpoint": {
+                        "clickTrackingParams": "CPUEEMY4IhMIu4Kj57Pe4wIVFqmCCh0PCAqQ",
+                        "commandMetadata": {
+                          "webCommandMetadata": {
+                            "url": "https://myaccount.google.com/privacy?hl=en"
+                          }
+                        },
+                        "urlEndpoint": {
+                          "url": "https://myaccount.google.com/privacy?hl=en",
+                          "target": "TARGET_NEW_WINDOW"
+                        }
+                      }
+                    },
+                    { "text": "." }
+                  ]
+                }
+              ],
+              "confirmButton": {
+                "buttonRenderer": {
+                  "style": "STYLE_BLUE_TEXT",
+                  "size": "SIZE_DEFAULT",
+                  "text": { "simpleText": "TURN ON" },
+                  "serviceEndpoint": {
+                    "clickTrackingParams": "CPcEEPBbIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ",
+                    "commandMetadata": {
+                      "webCommandMetadata": {
+                        "url": "/service_ajax",
+                        "sendPost": true
+                      }
+                    },
+                    "feedbackEndpoint": {
+                      "feedbackToken": "AB9zfpK8Er62-GPtTO0IXDMfsGN-91bNOgw6si17zxJAIIrBwRqnXcRKMg5ua4Acrbp0nEcN3p5CFEpABXWXX2qYoW2WEC8_AEdfneQMnm7UgrnQHvb-wGnHmX22Xcki-xmUe1dNCquzqygrfA84GgbhW1e0AyUGIs3n1_a1biaU-oWI3gKi5mSB2QTy_w7OtUD78GOvjmEr-LqVFRt1vH1YFvC3-gI3I2NUxjseqpsiGgt-n5JP5-TeoCkiUSJ13wqMEj5SQUFRljEeBGkKXAfbxIihFjqS5plNlC3yBtKyvxwXfc5htJk0VBGqn3zPSsXA8rempfnGJwu5zKRUJJ4XsiLLm5G0VMVX1l2Qu2Vm1YhausGPgHz1xioAM_waHPR3_dlCufQq9UCRmYN7LcNmYwjYAv548kuZOF0X7QvG3gfhyr3tUbCbuNrx_KOG7y1HDipzbCjRiURuYVqm6llB_a4w_-UJS3Q9ekWZ6JWVvZLqx59FfNui2YHzDyWv_MWrXC1wc-2jKaQmqk8pHv_TVEY5TGe3VfZMTUjmez0d4Qk4kH6JHB7SL3HBesma4QAh69ao15TneScj6Av8KbAmuIAYquDRQ95NXXA5zYngODXPLrEvVWd-mZ472ZgGjNXTWAb1o8xFP-r5_IOnZl_DNCmyNFtOmSsHZTW4lzWrOjJEUG2FEW47dA-yCDicZ1Vbd7055nEgOKsMBtnDFvYf_U0QBJbXfjQeAF3GZPfYkVkZ4yiGFHk",
+                      "uiActions": { "hideEnclosingContainer": false }
+                    }
+                  },
+                  "trackingParams": "CPcEEPBbIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ"
+                }
+              },
+              "cancelButton": {
+                "buttonRenderer": {
+                  "style": "STYLE_TEXT",
+                  "size": "SIZE_DEFAULT",
+                  "text": { "runs": [{ "text": "CANCEL" }] },
+                  "trackingParams": "CPYEEPBbIhMIu4Kj57Pe4wIVFqmCCh0PCAqQ"
+                }
+              }
+            }
+          }
+        }
+      },
+      "trackingParams": "CPQEEPBbGAQiEwi7gqPns97jAhUWqYIKHQ8ICpA="
+    }
+  },
+  {
+    "buttonRenderer": {
+      "style": "STYLE_TEXT",
+      "size": "SIZE_DEFAULT",
+      "text": { "runs": [{ "text": "Manage all activity" }] },
+      "navigationEndpoint": {
+        "clickTrackingParams": "CPMEEPBbGAUiEwi7gqPns97jAhUWqYIKHQ8ICpA=",
+        "commandMetadata": {
+          "webCommandMetadata": {
+            "url": "https://myactivity.google.com/myactivity"
+          }
+        },
+        "urlEndpoint": {
+          "url": "https://myactivity.google.com/myactivity",
+          "target": "TARGET_NEW_WINDOW"
+        }
+      },
+      "trackingParams": "CPMEEPBbGAUiEwi7gqPns97jAhUWqYIKHQ8ICpA="
+    }
+  }
+]
