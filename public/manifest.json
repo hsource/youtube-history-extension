@@ -16,5 +16,5 @@
     "scripts": ["js/background.js"]
   },
 
-  "permissions": ["storage", "https://www.youtube.com/*"]
+  "permissions": ["https://www.youtube.com/*"]
 }
