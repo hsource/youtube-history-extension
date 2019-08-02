@@ -3,10 +3,13 @@ import { SidebarItem, Endpoint } from './types/sidebarItems';
 async function createYoutubeClient() {
   const homePageResponse = await fetch('https://www.youtube.com/');
   const homePageText = await homePageResponse.text();
-  const idToken = homePageText.match(/"ID_TOKEN":"([^"]+)"/)[1];
-  const version = homePageText.match(
+  const idTokenMatches = homePageText.match(/"ID_TOKEN":"([^"]+)"/);
+  const idToken: string | null =
+    idTokenMatches && idTokenMatches[1] ? idTokenMatches[1] : null;
+  const versionMatches = homePageText.match(
     /"INNERTUBE_CONTEXT_CLIENT_VERSION":"([^"]+)"/,
-  )[1];
+  );
+  const version = versionMatches && versionMatches[1] ? versionMatches[1] : '1';
 
   return new YoutubeClient({ idToken, version });
 }
@@ -21,12 +24,18 @@ interface HistoryFeedData {
 }
 
 class YoutubeClient {
-  idToken: string;
+  idToken: string | null;
   version: string;
 
   historyFeedData: HistoryFeedData | null = null;
 
-  constructor({ idToken, version }: { idToken: string; version: string }) {
+  constructor({
+    idToken,
+    version,
+  }: {
+    idToken: string | null;
+    version: string;
+  }) {
     this.idToken = idToken;
     this.version = version;
   }
@@ -36,7 +45,9 @@ class YoutubeClient {
     newInit.headers = newInit.headers ? newInit.headers : {};
     newInit.headers['x-youtube-client-version'] = this.version;
     newInit.headers['x-youtube-client-name'] = 1;
-    newInit.headers['x-youtube-identity-token'] = this.idToken;
+    if (this.idToken !== null) {
+      newInit.headers['x-youtube-identity-token'] = this.idToken;
+    }
     return fetch(input, newInit);
   }
 
@@ -64,7 +75,11 @@ class YoutubeClient {
     );
 
     const action = turnOnText || turnOffText;
-    if (!action) return;
+    if (!action) {
+      throw new Error(
+        "We couldn't find the text to turn on or off the history. This may be because the extension only works for English users right now. Try changing your Youtube language to English",
+      );
+    }
 
     const sejParam =
       action.buttonRenderer &&
@@ -72,6 +87,13 @@ class YoutubeClient {
       action.buttonRenderer.navigationEndpoint.confirmDialogEndpoint &&
       action.buttonRenderer.navigationEndpoint.confirmDialogEndpoint.content
         .confirmDialogRenderer.confirmEndpoint;
+
+    if (!sejParam) {
+      throw new Error(
+        "We couldn't get your information! Try opening this dialog again",
+      );
+    }
+
     const csnParam: string = feedData[0].csn;
     const xsrfToken: string = feedData[1].xsrf_token;
 
@@ -81,8 +103,11 @@ class YoutubeClient {
     return this.historyFeedData;
   }
 
+  isToggling = false;
+
   async toggle() {
     let historyFeedData: HistoryFeedData;
+    this.isToggling = true;
     if (!this.historyFeedData) {
       historyFeedData = await this.getHistoryFeed();
     } else {
@@ -111,6 +136,7 @@ class YoutubeClient {
 
     this.historyFeedData = null;
     const newHistoryOn = !historyFeedData.historyOn;
+    this.isToggling = false;
     return newHistoryOn;
   }
 }
@@ -123,13 +149,17 @@ async function runImmediately() {
 runImmediately();
 
 async function updateHistoryStatus(client: YoutubeClient) {
-  const historyStatus = document.getElementById('historyStatus');
-  historyStatus.innerText = 'Loading...';
+  const historyStatus = document.getElementById('historyStatus')!;
+  historyStatus.innerText = 'Loading';
   try {
     const historyInfo = await client.getHistoryFeed();
-    historyStatus.innerText = historyInfo.historyOn ? 'ON' : 'OFF';
+    if (!client.isToggling) {
+      document.getElementById('loading')!.classList.add('d-none');
+      historyStatus.innerText = historyInfo.historyOn ? 'ON' : 'OFF';
+    }
   } catch (e) {
     historyStatus.innerText = 'Error';
+    document.getElementById('loading')!.classList.add('d-none');
     return;
   }
 }
@@ -155,6 +185,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   toggleButton.addEventListener('click', async () => {
     toggleButton.disabled = true;
+    document.getElementById('historyStatus')!.innerText = 'Toggling';
+    document.getElementById('loading')!.classList.remove('d-none');
     try {
       const expectedHistoryOn = await client.toggle();
 
@@ -169,10 +201,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       await updateHistoryStatus(client);
     } catch (e) {
-      document.getElementById('error').innerText = e.message;
+      document.getElementById('error')!.innerText = e.message;
     } finally {
       toggleButton.disabled = false;
+      document.getElementById('loading')!.classList.add('d-none');
     }
+  });
+
+  document.getElementById('openHistory')!.addEventListener('click', () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+      chrome.tabs.create({ url: 'https://www.youtube.com/feed/history' });
+      window.close();
+    });
   });
 
   await updateHistoryStatus(client);

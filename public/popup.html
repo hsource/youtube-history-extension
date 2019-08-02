@@ -10,20 +10,52 @@
         font-size: 200%;
         font-style: italic;
       }
+
+      .lds-dual-ring {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+      }
+      .lds-dual-ring:after {
+        content: ' ';
+        display: block;
+        width: 23px;
+        height: 23px;
+        margin: 1px;
+        border-radius: 50%;
+        border: 2px solid #777;
+        border-color: #777 transparent #777 transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+      }
+      @keyframes lds-dual-ring {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
-    <script src="js/vendor.js"></script>
   </head>
   <body>
     <div
-      style="min-width: 200px"
+      style="min-width: 250px"
       class="d-flex flex-column justify-content-center p-2"
     >
-      <div class="text-center text-muted">Youtube History Status</div>
-      <div id="historyStatus" class="text-center mt-1 mb-2">Loading...</div>
+      <div class="text-center text-muted mb-4">Youtube History Status</div>
+      <div
+        class="text-center mb-1 d-flex justify-content-center align-items-center"
+      >
+        <span id="historyStatus" class="mb-2">Loading</span>
+        <span id="loading" class="lds-dual-ring ml-3"></span>
+      </div>
       <div class="text-center">
         <button id="toggleButton" class="btn btn-primary">Toggle</button>
       </div>
       <div id="error"></div>
+      <button id="openHistory" class="btn btn-link mt-4">
+        Open Youtube History Page
+      </button>
     </div>
     <script src="js/popup.js"></script>
     <div></div>
